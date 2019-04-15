@@ -24,7 +24,7 @@ async def _class(ctx, number):
 
         if player._can_change_class:
 
-            if number.isdigit() and int(number) < len(rpg_utils.classes) and int(number) >= 1:
+            if number.isdigit() and int(number) =< len(rpg_utils.classes) and int(number) >= 1:
 
                 player._can_change_class = False
 
@@ -33,7 +33,7 @@ async def _class(ctx, number):
                 await ctx.send("Successfully set your class to **" + player._class + ".**")
             else:
 
-                await ctx.send("Invalid arguments! Try providing a number, 1-"+str(len(rpg_utils.classes))+".")
+                await ctx.send("Invalid arguments! Try providing a number from 1-"+str(len(rpg_utils.classes))+".")
         else:
 
             await ctx.send("You can't change your class right now.\nCurrent class: " + player._class)
