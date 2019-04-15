@@ -24,7 +24,7 @@ async def _class(ctx, number):
 
         if player._can_change_class:
 
-            if number.isdigit() and int(number) =< len(rpg_utils.classes) and int(number) >= 1:
+            if number.isdigit() and int(number) <= len(rpg_utils.classes) and int(number) >= 1:
 
                 player._can_change_class = False
 
