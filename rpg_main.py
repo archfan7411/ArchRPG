@@ -30,17 +30,17 @@ async def _class(ctx, number):
 
                 player._class = rpg_utils.classes[int(number)-1]
 
-                ctx.send("Successfully set your class to **" + player._class + ".**")
+                await ctx.send("Successfully set your class to **" + player._class + ".**")
             else:
 
-                ctx.send("Invalid arguments! Try providing a number, 1-"+str(len(rpg_utils.classes))+".")
+                await ctx.send("Invalid arguments! Try providing a number, 1-"+str(len(rpg_utils.classes))+".")
         else:
 
-            ctx.send("You can't change your class right now.\nCurrent class: " + player._class)
+            await ctx.send("You can't change your class right now.\nCurrent class: " + player._class)
      
     else:
         
-        ctx.send("You haven't begun your journey yet. Use `.rpg begin` to get started!")
+        await ctx.send("You haven't begun your journey yet. Use `.rpg begin` to get started!")
 
 token = ""
 
