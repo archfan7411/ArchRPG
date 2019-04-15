@@ -36,5 +36,10 @@ async def _class(ctx, number):
 
         ctx.send("You can't change your class right now.\nCurrent class: " + player._class)
 
+token = ""
 
+with open("token.cfg") as f:
+    token = f.readlines()[1]
+    
+bot.run(token)
 
