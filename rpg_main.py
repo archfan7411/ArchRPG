@@ -28,7 +28,7 @@ async def _class(ctx, number):
 
                 player._can_change_class = False
 
-                player._class = rpg_utils.classes[int(number)+1]
+                player._class = rpg_utils.classes[int(number)-1]
 
                 ctx.send("Successfully set your class to **" + player._class + ".**")
             else:
