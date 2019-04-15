@@ -17,24 +17,30 @@ async def begin(ctx):
 
 @bot.command(name = 'class')
 async def _class(ctx, number):
+    
+    if rpg_utils.playerexists(ctx.author):
 
-    player = rpg_utils.getplayer(ctx.author)
+        player = rpg_utils.getplayer(ctx.author)
 
-    if player._can_change_class:
+        if player._can_change_class:
 
-        if number.isDigit() and int(number) < len(rpg_utils.classes) and int(number) >= 1:
+            if number.isdigit() and int(number) < len(rpg_utils.classes) and int(number) >= 1:
 
-            player._can_change_class = False
+                player._can_change_class = False
 
-            player._class = rpg_utils.classes[int(number)+1]
+                player._class = rpg_utils.classes[int(number)+1]
 
-            ctx.send("Successfully set your class to **" + player._class + ".**")
+                ctx.send("Successfully set your class to **" + player._class + ".**")
+            else:
+
+                ctx.send("Invalid arguments! Try providing a number, 1-"+str(len(rpg_utils.classes))+".")
         else:
 
-            ctx.send("Invalid arguments! Try providing a number, 1-"+str(len(rpg_utils.classes))+".")
+            ctx.send("You can't change your class right now.\nCurrent class: " + player._class)
+     
     else:
-
-        ctx.send("You can't change your class right now.\nCurrent class: " + player._class)
+        
+        ctx.send("You haven't begun your journey yet. Use `.rpg begin` to get started!")
 
 token = ""
 
