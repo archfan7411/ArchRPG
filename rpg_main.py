@@ -39,7 +39,7 @@ async def _class(ctx, number):
 token = ""
 
 with open("token.cfg") as f:
-    token = f.readlines()[1]
+    token = f.readlines()[0]
     
 bot.run(token)
 
